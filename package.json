@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts"
+    "dev": "dotenvx run -f .env.development -- ts-node src/index.ts",
+    "start": "dotenvx run -f .env.production -- ts-node src/index.ts",
+    "encrypt:prod": "dotenvx encrypt -f .env.production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.48.4",
     "discord.js": "^14.21.0",
     "dotenv": "^17.2.1"
   },
